@@ -99,7 +99,7 @@ body {
 /* Button container */
 .button-container {
   position: absolute;
-  bottom: 64px;
+  top: 729px;
   left: 50%;
   transform: translateX(-50%);
   width: 744px;
@@ -122,9 +122,21 @@ body {
   overflow: hidden;
 }
 
-.play-btn svg {
+.play-btn img {
   width: 48px;
   height: 48px;
+}
+
+.play-btn {
+  transition: background 0.2s ease;
+}
+
+.play-btn:hover {
+  background: #000000;
+}
+
+.play-btn:hover img {
+  filter: invert(1);
 }
 
 /* Queue button */
@@ -141,9 +153,17 @@ body {
   overflow: hidden;
 }
 
-.queue-btn svg {
+.queue-btn img {
   width: 48px;
   height: 48px;
+}
+
+.queue-btn {
+  transition: opacity 0.2s ease;
+}
+
+.queue-btn:hover {
+  opacity: 0.6;
 }
 
 /* Popup overlay */
@@ -204,9 +224,17 @@ body {
   justify-content: center;
 }
 
-.close-btn svg {
+.close-btn img {
   width: 32px;
   height: 32px;
+}
+
+.close-btn {
+  transition: opacity 0.2s ease;
+}
+
+.close-btn:hover {
+  opacity: 0.6;
 }
 
 /* Services container */
@@ -234,10 +262,18 @@ body {
   color: #ffffff;
 }
 
-.service-row svg {
+.service-row img {
   width: 32px;
   height: 32px;
   flex-shrink: 0;
+}
+
+.service-row {
+  transition: opacity 0.2s ease;
+}
+
+.service-row:hover {
+  opacity: 0.6;
 }
 
 .service-row span {
