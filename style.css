@@ -44,16 +44,16 @@ body {
   pointer-events: none;
 }
 
-/* Content container */
+/* Content container — desktop fluid: 1280–1920 */
 .content-container {
   position: absolute;
-  top: 64px;
+  top: clamp(32px, 7.1vh, 96px);
   left: 50%;
   transform: translateX(-50%);
-  width: 1312px;
-  height: 641px;
+  width: clamp(880px, 91.1vw, 1750px);
+  height: clamp(440px, 71.2vh, 780px);
   background: #000000;
-  border-radius: 32px;
+  border-radius: clamp(24px, 2.22vw, 42px);
   overflow: hidden;
   z-index: 2;
 }
@@ -61,12 +61,12 @@ body {
 /* Title */
 .title {
   position: absolute;
-  top: 32px;
-  left: 32px;
+  top: clamp(20px, 2.22vw, 42px);
+  left: clamp(20px, 2.22vw, 42px);
   font-family: 'PPRightGrotesk', sans-serif;
-  font-size: 64px;
+  font-size: clamp(44px, 4.44vw, 86px);
   color: #ffffff;
-  letter-spacing: -1.28px;
+  letter-spacing: -0.02em;
   line-height: 0.96;
   white-space: nowrap;
 }
@@ -74,12 +74,12 @@ body {
 /* Artist name */
 .artist {
   position: absolute;
-  bottom: 32px;
-  left: 32px;
+  bottom: clamp(20px, 2.22vw, 42px);
+  left: clamp(20px, 2.22vw, 42px);
   font-family: 'PPRightGrotesk', sans-serif;
-  font-size: 48px;
+  font-size: clamp(32px, 3.33vw, 64px);
   color: #ffffff;
-  letter-spacing: -0.96px;
+  letter-spacing: -0.02em;
   line-height: 0.96;
   white-space: nowrap;
 }
@@ -88,10 +88,10 @@ body {
 .cassette {
   position: absolute;
   top: 50%;
-  left: calc(50% - 0.5px);
+  left: 50%;
   transform: translate(-50%, -50%);
-  width: 343px;
-  height: 343px;
+  width: clamp(240px, 23.82vw, 460px);
+  height: clamp(240px, 23.82vw, 460px);
   background: #000000;
   object-fit: cover;
 }
@@ -99,36 +99,33 @@ body {
 /* Button container */
 .button-container {
   position: absolute;
-  top: 729px;
+  bottom: clamp(32px, 7.1vh, 96px);
   left: 50%;
   transform: translateX(-50%);
-  width: 744px;
+  width: clamp(520px, 51.67vw, 1000px);
   display: flex;
-  gap: 8px;
+  gap: clamp(6px, 0.56vw, 11px);
   z-index: 2;
 }
 
 /* Play button */
 .play-btn {
   flex: 1 0 0;
-  height: 107px;
+  height: clamp(80px, 11.89vh, 140px);
   background: #ffffff;
-  border-radius: 32px;
+  border-radius: clamp(24px, 2.22vw, 42px);
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  transition: background 0.2s ease;
 }
 
 .play-btn img {
-  width: 48px;
-  height: 48px;
-}
-
-.play-btn {
-  transition: background 0.2s ease;
+  width: clamp(36px, 3.33vw, 64px);
+  height: clamp(36px, 3.33vw, 64px);
 }
 
 .play-btn:hover {
@@ -142,28 +139,29 @@ body {
 /* Queue button */
 .queue-btn {
   flex: 1 0 0;
-  height: 107px;
+  height: clamp(80px, 11.89vh, 140px);
   background: #252525;
-  border-radius: 32px;
+  border-radius: clamp(24px, 2.22vw, 42px);
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  transition: background 0.2s ease;
 }
 
 .queue-btn img {
-  width: 48px;
-  height: 48px;
-}
-
-.queue-btn {
-  transition: opacity 0.2s ease;
+  width: clamp(36px, 3.33vw, 64px);
+  height: clamp(36px, 3.33vw, 64px);
 }
 
 .queue-btn:hover {
-  opacity: 0.6;
+  background: #ffffff;
+}
+
+.queue-btn:hover img {
+  filter: invert(1);
 }
 
 /* Popup overlay */
@@ -222,15 +220,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: opacity 0.2s ease;
 }
 
 .close-btn img {
   width: 32px;
   height: 32px;
-}
-
-.close-btn {
-  transition: opacity 0.2s ease;
 }
 
 .close-btn:hover {
@@ -260,16 +255,13 @@ body {
   overflow: hidden;
   text-decoration: none;
   color: #ffffff;
+  transition: opacity 0.2s ease;
 }
 
 .service-row img {
   width: 32px;
   height: 32px;
   flex-shrink: 0;
-}
-
-.service-row {
-  transition: opacity 0.2s ease;
 }
 
 .service-row:hover {
@@ -285,38 +277,66 @@ body {
   white-space: nowrap;
 }
 
-/* ===== MOBILE ===== */
+/* ===== MOBILE (375–430px) ===== */
 @media (max-width: 767px) {
   .bg-overlay {
     background: rgba(0, 0, 0, 0.64);
   }
 
   .content-container {
-    width: 343px;
-    height: 599px;
-    top: 64px;
+    width: calc(100vw - 32px);
+    height: clamp(500px, 73.8vh, 720px);
+    top: clamp(48px, 7.9vh, 72px);
+    border-radius: clamp(24px, 8.53vw, 36px);
   }
 
   .title {
-    font-size: 48px;
+    font-size: clamp(42px, 12.8vw, 55px);
     letter-spacing: -0.96px;
     white-space: normal;
+    top: clamp(24px, 8.53vw, 36px);
+    left: clamp(24px, 8.53vw, 36px);
   }
 
   .artist {
-    font-size: 24px;
+    font-size: clamp(22px, 6.4vw, 28px);
     letter-spacing: -0.48px;
+    bottom: clamp(24px, 8.53vw, 36px);
+    left: clamp(24px, 8.53vw, 36px);
   }
 
   .cassette {
-    left: 50%;
+    width: calc(100vw - 32px);
+    height: calc(100vw - 32px);
   }
 
   .button-container {
-    top: 671px;
-    left: 16px;
-    transform: none;
-    width: 343px;
+    bottom: clamp(24px, 4.2vh, 44px);
+    top: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100vw - 32px);
+    gap: 8px;
+  }
+
+  .play-btn {
+    height: clamp(80px, 13.2vh, 120px);
+    border-radius: clamp(24px, 8.53vw, 36px);
+  }
+
+  .play-btn img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .queue-btn {
+    height: clamp(80px, 13.2vh, 120px);
+    border-radius: clamp(24px, 8.53vw, 36px);
+  }
+
+  .queue-btn img {
+    width: 48px;
+    height: 48px;
   }
 
   .popup-overlay.active {
@@ -324,8 +344,34 @@ body {
   }
 
   .modal {
-    width: 375px;
-    height: 297px;
+    width: 100vw;
+    max-width: 430px;
+    height: auto;
+    min-height: 248px;
     border-radius: 32px 32px 0 0;
+    padding-bottom: clamp(16px, 4.27vw, 24px);
+  }
+
+  .services {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: auto;
+    margin: 64px 16px 0;
+  }
+}
+
+/* ===== SMALL PHONES (≤389px) ===== */
+@media (max-width: 389px) {
+  .title {
+    font-size: 40px;
+  }
+
+  .artist {
+    font-size: 20px;
+  }
+
+  .service-row span {
+    font-size: 28px;
   }
 }
