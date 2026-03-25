@@ -188,7 +188,7 @@ body {
 .modal {
   position: relative;
   width: 375px;
-  height: 336px;
+  height: 248px;
   background: #252525;
   border-radius: 32px;
   overflow: hidden;
@@ -319,29 +319,13 @@ body {
     width: 343px;
   }
 
-  .play-btn {
-    background: rgba(255, 255, 255, 0.8);
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
-  }
-
-  .play-btn:hover {
-    background: rgba(0, 0, 0, 0.8);
-  }
-
-  .queue-btn {
-    background: rgba(37, 37, 37, 0.6);
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
-  }
-
   .popup-overlay.active {
     align-items: flex-end;
   }
 
   .modal {
     width: 375px;
-    height: 385px;
+    height: 297px;
     border-radius: 32px 32px 0 0;
   }
 }
