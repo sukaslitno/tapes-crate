@@ -1,0 +1,250 @@
+@font-face {
+  font-family: 'PPRightGrotesk';
+  src: url('public/fonts/PPRightGrotesk-CompactDark.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #131313;
+  font-family: 'PPRightGrotesk', sans-serif;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Background video */
+.bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Dark overlay on background */
+.bg-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Content container */
+.content-container {
+  position: absolute;
+  top: 64px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1312px;
+  height: 641px;
+  background: #000000;
+  border-radius: 32px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* Title */
+.title {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  font-family: 'PPRightGrotesk', sans-serif;
+  font-size: 64px;
+  color: #ffffff;
+  letter-spacing: -1.28px;
+  line-height: 0.96;
+  white-space: nowrap;
+}
+
+/* Artist name */
+.artist {
+  position: absolute;
+  bottom: 32px;
+  left: 32px;
+  font-family: 'PPRightGrotesk', sans-serif;
+  font-size: 48px;
+  color: #ffffff;
+  letter-spacing: -0.96px;
+  line-height: 0.96;
+  white-space: nowrap;
+}
+
+/* Cassette video */
+.cassette {
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 0.5px);
+  transform: translate(-50%, -50%);
+  width: 343px;
+  height: 343px;
+  background: #000000;
+  object-fit: cover;
+}
+
+/* Button container */
+.button-container {
+  position: absolute;
+  bottom: 64px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 744px;
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+
+/* Play button */
+.play-btn {
+  flex: 1 0 0;
+  height: 107px;
+  background: #ffffff;
+  border-radius: 32px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.play-btn svg {
+  width: 48px;
+  height: 48px;
+}
+
+/* Queue button */
+.queue-btn {
+  flex: 1 0 0;
+  height: 107px;
+  background: #252525;
+  border-radius: 32px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.queue-btn svg {
+  width: 48px;
+  height: 48px;
+}
+
+/* Popup overlay */
+.popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-overlay.active {
+  display: flex;
+}
+
+/* Modal */
+.modal {
+  position: relative;
+  width: 375px;
+  height: 336px;
+  background: #252525;
+  border-radius: 32px;
+  overflow: hidden;
+}
+
+/* Listen on header */
+.modal-header {
+  position: absolute;
+  top: 44px;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  font-family: 'PPRightGrotesk', sans-serif;
+  font-size: 24px;
+  color: #ffffff;
+  letter-spacing: -0.48px;
+  line-height: 0.96;
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* Services container */
+.services {
+  position: absolute;
+  top: 64px;
+  left: 16px;
+  width: 343px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Service row */
+.service-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 80px;
+  background: #3d3d3d;
+  border-radius: 24px;
+  padding: 28px 16px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.service-row svg {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.service-row span {
+  font-family: 'PPRightGrotesk', sans-serif;
+  font-size: 32px;
+  color: #ffffff;
+  letter-spacing: -0.64px;
+  line-height: 0.96;
+  white-space: nowrap;
+}
